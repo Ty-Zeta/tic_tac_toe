@@ -12,4 +12,20 @@ class TestTicTacToe < Minitest::Test
         assert_equal(['x','2','3','4','5','6','7','8','9'], update_move(board, 'x', 1))
     end
 
+    def test_second_spot
+        board = ['x','2','3','4','5','6','7','8','9']
+        assert_equal(['x','2','3','4','5','6','o','8','9'], update_move(board, 'o', 7))
+    end
+
+    def test_availibility
+        board = ['x','2','3','4','5','6','o','8','9']
+        position = 8
+        assert_equal(true, spot_open?(board, position))
+    end
+
+    def test_10
+        board = ['x','2','3','4','5','6','o','8','9']
+        position = 10
+        assert_equal(false, spot_open?(board, position))
+    end
 end
