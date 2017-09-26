@@ -32,4 +32,9 @@ class TestTicTacToe < Minitest::Test
     def test_current_player
         assert_equal("Player X it is now your turn", change_player("Player O"))
     end
+
+    def  test_full_board
+        board = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+        assert_equal( true, test_for_full_board(board))
+    end
 end
