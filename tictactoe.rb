@@ -1,10 +1,5 @@
 def update_move(board, player_symbol, position)
-p board
-p player_symbol
-p position
-
 board[position-1] = player_symbol
-
 board
 end
 
@@ -15,5 +10,13 @@ def spot_open?(board, position)
         false
     else
         true
+    end
+end
+
+def change_player(current_player)
+    if current_player == "Player X"
+        "Player O it is now your turn"
+    elsif current_player == "Player O"
+        "Player X it is now your turn"
     end
 end

@@ -28,4 +28,8 @@ class TestTicTacToe < Minitest::Test
         position = 10
         assert_equal(false, spot_open?(board, position))
     end
+
+    def test_current_player
+        assert_equal("Player X it is now your turn", change_player("Player O"))
+    end
 end
