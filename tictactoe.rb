@@ -28,3 +28,11 @@ def test_for_full_board(board)
         board_full = false
     end
 end
+
+def win_condition(board)
+    if board[0] == "x" && board[3] == "x" && board[6] == "x"
+        true
+    else
+        false
+    end
+end

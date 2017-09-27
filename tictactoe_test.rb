@@ -35,6 +35,11 @@ class TestTicTacToe < Minitest::Test
 
     def  test_full_board
         board = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
-        assert_equal( true, test_for_full_board(board))
+        assert_equal(true, test_for_full_board(board))
+    end
+
+    def test_win
+        board = ['x', 'o', '3', 'x', 'o', '6', 'x', '8', '9']
+        assert_equal(true, win_condition(board))
     end
 end
