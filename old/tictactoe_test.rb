@@ -30,7 +30,7 @@ class TestTicTacToe < Minitest::Test
     end
 
     def test_current_player
-        assert_equal("Player X it is now your turn", change_player("Player O"))
+        assert_equal("Player X", change_player("Player O"))
     end
 
     def  test_full_board
