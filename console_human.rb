@@ -18,3 +18,11 @@ class Human
     end
 
 end
+
+class Sequential
+    attr_accessor :marker
+    
+    def get_move(ttt_board)
+        ttt_board.index('')
+    end
+end

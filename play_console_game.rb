@@ -4,8 +4,14 @@ game = ConsoleGame.new
 
 game.intro
 
+puts 'Enter 1-9 to choose your square: '
+puts " 1 | 2 | 3 "
+puts "___________"
+puts " 4 | 5 | 6 "
+puts "___________"
+puts " 7 | 8 | 9 "
+
 until game.check_winner || game.board.full_board?
-    game.display_board
     game.update_board
     
     if game.check_winner == false
