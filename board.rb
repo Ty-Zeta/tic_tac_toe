@@ -45,11 +45,10 @@ class Board
 
         results = false
 
-        winners.each do |inner_array|
+        winners.each do |possible_winner_array_set|
             count = 0
-
-            inner_array.each do |value|
-
+            
+            possible_winner_array_set.each do |value|
                 if ttt_board[value] == marker
                     count += 1
 
