@@ -70,6 +70,7 @@ class ConsoleGame
             1 - Human
             2 - Sequential
             3 - Random
+            4- Impossible
             """
         @input1 = gets.chomp.to_i
 
@@ -81,9 +82,12 @@ class ConsoleGame
 
         elsif input1 == 3
             @player_1 = Random.new('X')
+
+        elsif input1 == 4
+            @player_1 = Impossible.new('X')
         
         else
-            puts "Invalid input, please input 1, 2, or 3"
+            puts "Invalid input, please input 1, 2, 3, or 4"
             get_player1
         end
     end
@@ -94,6 +98,7 @@ class ConsoleGame
             1 - Human
             2 - Sequential
             3 - Random
+            4 - Impossible
             """
         @input2 = gets.chomp.to_i
 
@@ -105,9 +110,12 @@ class ConsoleGame
 
         elsif input2 == 3
             @player_2 = Random.new('O')
+
+        elsif input2 == 4
+            @player_2 = Impossible.new('O')
         
         else
-            puts "Invalid input, please input 1, 2, or 3"
+            puts "Invalid input, please input 1, 2, 3, or 4"
             get_player2
         end
     end
