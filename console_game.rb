@@ -1,6 +1,7 @@
 require_relative 'board.rb'
 require_relative 'console_human.rb'
 require_relative 'sequential.rb'
+require_relative 'random.rb'
 
 class ConsoleGame
     attr_accessor :player_1, :player_2, :board, :active_player, :move, :input1, :input2
@@ -79,7 +80,7 @@ class ConsoleGame
             @player_1 = Sequential.new('X')
 
         elsif input1 == 3
-            @player_1 = RandomAI.new('X')
+            @player_1 = Random.new('X')
         
         else
             puts "Invalid input, please input 1, 2, or 3"
@@ -103,7 +104,7 @@ class ConsoleGame
             @player_2 = Sequential.new('O')
 
         elsif input2 == 3
-            @player_2 = RandomAI.new('O')
+            @player_2 = Random.new('O')
         
         else
             puts "Invalid input, please input 1, 2, or 3"
