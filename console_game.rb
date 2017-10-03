@@ -110,5 +110,4 @@ class ConsoleGame
             get_player2
         end
     end
-
 end
