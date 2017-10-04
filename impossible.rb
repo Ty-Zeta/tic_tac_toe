@@ -16,6 +16,22 @@ class Impossible
         end
     end
 
+    def get_win(ttt_board)
+        get_win_or_block(ttt_board, marker)
+    end
+
+    def get_block(ttt_board)
+        get_win_or_block(ttt_board, opponent)
+    end
+
+    def get_center(ttt_board)
+        if ttt_board[4] == ''
+            move = 4
+        else
+            move = 10
+        end
+    end
+
     def get_win_or_block(ttt_board, player)
 
         possible_moves = [[ttt_board[0], ttt_board[1], ttt_board[2]], [ttt_board[3], ttt_board[4], ttt_board[5]], [ttt_board[6], ttt_board[7], ttt_board[8]]]
@@ -33,16 +49,21 @@ class Impossible
         move
     end
 
-    def win(ttt_board)
-        get_win_or_block(ttt_board, marker)
-    end
-
-    def block(ttt_board)
-        get_win_or_block(ttt_board, opponent)
-    end
-
     def get_move(ttt_board)
-        win(ttt_board)
-        block(ttt_board)
+        move = 10
+
+        if 
+            get_win(ttt_board) <= 8
+            move = get_win(ttt_board)
+        
+        elsif
+            get_block(ttt_board) <= 8
+            move = get_block(ttt_board)
+        
+        else 
+            get_center(ttt_board)
+            move = get_center(ttt_board)
+        end
+        move
     end
 end
