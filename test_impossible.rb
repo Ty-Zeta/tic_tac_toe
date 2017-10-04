@@ -15,12 +15,17 @@ class TestImpossible < Minitest::Test
 
     def test_block
         impossible_variable = Impossible.new("X")
-        assert_equal(1, impossible_variable.get_block(["O", "", "O", "", "", "", "", "", ""]))
+        assert_equal(1, impossible_variable.get_move(["O", "", "O", "", "", "", "", "", ""]))
     end
 
     def test_center
         impossible_variable = Impossible.new("X")
-        assert_equal(4, impossible_variable.get_center(["", "", "", "", "", "", "", "", ""]))
+        assert_equal(4, impossible_variable.get_move(["", "", "", "", "", "", "", "", ""]))
+    end
+
+    def test_center2
+        impossible_variable = Impossible.new("X")
+        assert_equal(4, impossible_variable.get_move(["X", "O", "X", "O", "", "O", "X", "O", "X"]))
     end
 
 end
