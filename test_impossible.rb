@@ -38,4 +38,14 @@ class TestImpossible < Minitest::Test
         assert_equal(4, impossible_variable.get_move(["X", "O", "X", "O", "", "O", "X", "O", "X"]))
     end
 
+    def test_fork
+        impossible_variable = Impossible.new("X")
+        assert_equal(0, impossible_variable.get_fork(["", "", "", "", "", "", "", "", ""]))
+    end
+
+    def test_fork2
+        impossible_variable = Impossible.new("X")
+        assert_equal(0, impossible_variable.get_move(["", "", "", "", "O", "", "", "", ""]))
+    end
+
 end

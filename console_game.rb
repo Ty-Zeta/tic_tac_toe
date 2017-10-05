@@ -2,6 +2,7 @@ require_relative 'board.rb'
 require_relative 'console_human.rb'
 require_relative 'sequential.rb'
 require_relative 'random.rb'
+require_relative 'impossible.rb'
 
 class ConsoleGame
     attr_accessor :player_1, :player_2, :board, :active_player, :move, :input1, :input2

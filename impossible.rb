@@ -9,8 +9,10 @@ class Impossible
     def get_opponent(marker)
         opponent = 'X'
 
-        if marker == 'X'
+        if 
+            marker == 'X'
             opponent = 'O'
+        
         else
             opponent = 'X'
         end
@@ -25,10 +27,34 @@ class Impossible
     end
 
     def get_center(ttt_board)
-        if ttt_board[4] == ''
+        if 
+            ttt_board[4] == ''
             move = 4
+        
         else
             move = 90
+        end
+    end
+
+    def get_fork(ttt_board)
+        if 
+            ttt_board[0] == ''
+            move = 0
+
+        elsif 
+            ttt_board[2] == ''
+            move = 2
+
+        elsif 
+            ttt_board[6] == ''
+            move = 6
+        
+        elsif 
+            ttt_board[8] == ''
+            move = 8
+
+        else 
+            move = 60
         end
     end
 
@@ -79,10 +105,18 @@ class Impossible
         elsif
             get_block(ttt_board) <= 8
             move = get_block(ttt_board)
-        
-        else 
-            get_center(ttt_board)
+
+        elsif 
+            get_center(ttt_board) <= 8
             move = get_center(ttt_board)
+
+        elsif
+            get_fork(ttt_board) <= 8
+            move = get_fork(ttt_board)
+
+        else
+            move = ttt_board.index('')
+        
         end
         move
     end
@@ -90,7 +124,11 @@ end
 
 # def get_win_or_block(ttt_board, player)
     
-#             possible_moves = [[ttt_board[0], ttt_board[1], ttt_board[2]], [ttt_board[3], ttt_board[4], ttt_board[5]], [ttt_board[6], ttt_board[7], ttt_board[8]]]
+#             possible_moves = [
+                # [ttt_board[0], ttt_board[1], ttt_board[2]],
+                # [ttt_board[3], ttt_board[4], ttt_board[5]],
+                # [ttt_board[6], ttt_board[7], ttt_board[8]]
+                # ]
 #             move = 0
 #             possible_winning_combos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     
